@@ -58,32 +58,32 @@ const StyledMenu = styled.div`
   border: none;
 `
 
-const StyledListUrlText = styled.div`
-  max-width: 160px;
-  opacity: 0.6;
-  margin-right: 0.5rem;
-  font-size: 14px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`
+// const StyledListUrlText = styled.div`
+//   max-width: 160px;
+//   opacity: 0.6;
+//   margin-right: 0.5rem;
+//   font-size: 14px;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+// `
 
-function ListOrigin({ listUrl }: { listUrl: string }) {
-  const ensName = useMemo(() => parseENSAddress(listUrl)?.ensName, [listUrl])
-  const host = useMemo(() => {
-    if (ensName) return undefined
-    const lowerListUrl = listUrl.toLowerCase()
-    if (lowerListUrl.startsWith('ipfs://') || lowerListUrl.startsWith('ipns://')) {
-      return listUrl
-    }
-    try {
-      const url = new URL(listUrl)
-      return url.host
-    } catch (error) {
-      return undefined
-    }
-  }, [listUrl, ensName])
-  return <>{ensName ?? host}</>
-}
+// function ListOrigin({ listUrl }: { listUrl: string }) {
+//   const ensName = useMemo(() => parseENSAddress(listUrl)?.ensName, [listUrl])
+//   const host = useMemo(() => {
+//     if (ensName) return undefined
+//     const lowerListUrl = listUrl.toLowerCase()
+//     if (lowerListUrl.startsWith('ipfs://') || lowerListUrl.startsWith('ipns://')) {
+//       return listUrl
+//     }
+//     try {
+//       const url = new URL(listUrl)
+//       return url.host
+//     } catch (error) {
+//       return undefined
+//     }
+//   }, [listUrl, ensName])
+//   return <>{ensName ?? host}</>
+// }
 
 function listUrlRowHTMLId(listUrl: string) {
   return `list-row-${listUrl.replace(/\./g, '-')}`
@@ -167,7 +167,7 @@ const ListRow = memo(function ListRow({ listUrl, onBack }: { listUrl: string; on
             {list.name}
           </Text>
         </Row>
-        <Row
+        {/* <Row
           style={{
             marginTop: '4px'
           }}
@@ -175,7 +175,7 @@ const ListRow = memo(function ListRow({ listUrl, onBack }: { listUrl: string; on
           <StyledListUrlText title={listUrl}>
             <ListOrigin listUrl={listUrl} />
           </StyledListUrlText>
-        </Row>
+        </Row> */}
       </Column>
       <StyledMenu ref={node as any}>
         <ButtonOutlined
@@ -196,8 +196,10 @@ const ListRow = memo(function ListRow({ listUrl, onBack }: { listUrl: string; on
           <PopoverContainer show={true} ref={setPopperElement as any} style={styles.popper} {...attributes.popper}>
             <div>{list && listVersionLabel(list.version)}</div>
             <SeparatorDark />
-            <ExternalLink href={`https://tokenlists.org/token-list?url=${listUrl}`}>View list</ExternalLink>
-            <UnpaddedLinkStyledButton onClick={handleRemoveList} disabled={Object.keys(listsByUrl).length === 1}>
+            {/* <ExternalLink href={`https://tokenlists.org/token-list?url=${listUrl}`}>View list</ExternalLink> */}
+            <ExternalLink href={listUrl}>View list</ExternalLink>
+            {/*<UnpaddedLinkStyledButton onClick={handleRemoveList} disabled={Object.keys(listsByUrl).length === 1}>*/}
+            <UnpaddedLinkStyledButton onClick={handleRemoveList}>
               Remove list
             </UnpaddedLinkStyledButton>
             {pending && (
@@ -372,7 +374,7 @@ export function ListSelect({ onDismiss, onBack }: { onDismiss: () => void; onBac
       <Separator />
 
       <div style={{ padding: '16px', textAlign: 'center' }}>
-        <ExternalLink href="https://tokenlists.org">Browse lists</ExternalLink>
+        <ExternalLink href="https://github.com/mdexSwap/hswap/blob/main/tokenlist.json">Browse lists</ExternalLink>
       </div>
     </Column>
   )

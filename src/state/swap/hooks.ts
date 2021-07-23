@@ -20,7 +20,7 @@ import { useUserSlippageTolerance } from '../user/hooks'
 import { computeSlippageAdjustedAmounts } from '../../utils/prices'
 
 export function useSwapState(): AppState['swap'] {
-  return useSelector<AppState, AppState['swap']>(state => state.swap)
+  return useSelector<AppState, AppState['swap']>(state =>state.swap)
 }
 
 export function useSwapActionHandlers(): {
@@ -35,7 +35,7 @@ export function useSwapActionHandlers(): {
       dispatch(
         selectCurrency({
           field,
-          currencyId: currency instanceof Token ? currency.address : currency === ETHER ? 'ETH' : ''
+          currencyId: currency instanceof Token ? currency.address : currency === ETHER ? 'HT' : ''
         })
       )
     },
@@ -122,11 +122,10 @@ export function useDerivedSwapInfo(): {
   const {
     independentField,
     typedValue,
-    [Field.INPUT]: { currencyId: inputCurrencyId },
+    [Field.INPUT]: { currencyId: inputCurrencyId },//连续解构赋值+重命名
     [Field.OUTPUT]: { currencyId: outputCurrencyId },
     recipient
   } = useSwapState()
-
   const inputCurrency = useCurrency(inputCurrencyId)
   const outputCurrency = useCurrency(outputCurrencyId)
   const recipientLookup = useENS(recipient ?? undefined)
@@ -221,10 +220,10 @@ function parseCurrencyFromURLParameter(urlParam: any): string {
   if (typeof urlParam === 'string') {
     const valid = isAddress(urlParam)
     if (valid) return valid
-    if (urlParam.toUpperCase() === 'ETH') return 'ETH'
-    if (valid === false) return 'ETH'
+    if (urlParam.toUpperCase() === 'HT') return 'HT'
+    if (valid === false) return 'HT'
   }
-  return 'ETH' ?? ''
+  return 'HT' ?? ''
 }
 
 function parseTokenAmountURLParameter(urlParam: any): string {
@@ -249,6 +248,7 @@ function validatedRecipient(recipient: any): string | null {
 export function queryParametersToSwapState(parsedQs: ParsedQs): SwapState {
   let inputCurrency = parseCurrencyFromURLParameter(parsedQs.inputCurrency)
   let outputCurrency = parseCurrencyFromURLParameter(parsedQs.outputCurrency)
+
   if (inputCurrency === outputCurrency) {
     if (typeof parsedQs.outputCurrency === 'string') {
       inputCurrency = ''
@@ -279,10 +279,11 @@ export function useDefaultsFromURLSearch():
   const { chainId } = useActiveWeb3React()
   const dispatch = useDispatch<AppDispatch>()
   const parsedQs = useParsedQueryString()
+  //数组解构赋值，通过React.useState获取状态和更新状态的方法
   const [result, setResult] = useState<
     { inputCurrencyId: string | undefined; outputCurrencyId: string | undefined } | undefined
   >()
-
+    //useEffect用来模拟函数组件的生命周期钩子
   useEffect(() => {
     if (!chainId) return
     const parsed = queryParametersToSwapState(parsedQs)

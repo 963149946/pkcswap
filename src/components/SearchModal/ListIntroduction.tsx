@@ -1,8 +1,8 @@
 import React from 'react'
-//import { Text } from 'rebass'
-//import { ExternalLink } from '../../theme'
+import { Text } from 'rebass'
+import { ExternalLink } from '../../theme'
 import { ButtonPrimary } from '../Button'
-//import { OutlineCard } from '../Card'
+import { OutlineCard } from '../Card'
 import Column, { AutoColumn } from '../Column'
 import { PaddedColumn } from './styleds'
 import { useDarkModeManager } from '../../state/user/hooks'
@@ -40,6 +40,12 @@ export default function ListIntroduction({ onSelectList }: { onSelectList: () =>
               <ExternalLink href="https://tokenlists.org">tokenlists.org</ExternalLink> to learn more.
             </Text>
           </OutlineCard> */}
+          <OutlineCard style={{ marginBottom: '8px', padding: '1rem' }}>
+            <Text fontWeight={400} fontSize={14} style={{ textAlign: 'center' }}>
+              Token lists are an open specification. Check out{' '}
+              <ExternalLink href="http://github.com/mdexSwap/hswap/blob/main/tokenlist.json">tokenlist.json</ExternalLink> to learn more.
+            </Text>
+          </OutlineCard>
         </AutoColumn>
       </PaddedColumn>
     </Column>
