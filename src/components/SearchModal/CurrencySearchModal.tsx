@@ -5,7 +5,7 @@ import useLast from '../../hooks/useLast'
 import { useSelectedListUrl } from '../../state/lists/hooks'
 import Modal from '../Modal'
 import { CurrencySearch } from './CurrencySearch'
-import ListIntroduction from './ListIntroduction'
+//import ListIntroduction from './ListIntroduction'
 import { ListSelect } from './ListSelect'
 
 interface CurrencySearchModalProps {
@@ -56,20 +56,33 @@ export default function CurrencySearchModal({
     })
     setListView(false)
   }, [])
-  const handleSelectListIntroduction = useCallback(() => {
-    setListView(true)
-  }, [])
+  // const handleSelectListIntroduction = useCallback(() => {
+  //   setListView(true)
+  // }, [])
 
   const selectedListUrl = useSelectedListUrl()
   const noListSelected = !selectedListUrl
 
   return (
     <Modal isOpen={isOpen} onDismiss={onDismiss} maxHeight={90} minHeight={listView ? 40 : noListSelected ? 0 : 80}>
-      {listView ? (
+      {/* {listView ? (
         <ListSelect onDismiss={onDismiss} onBack={handleClickBack} />
       ) : noListSelected ? (
         <ListIntroduction onSelectList={handleSelectListIntroduction} />
       ) : (
+        <CurrencySearch
+          isOpen={isOpen}
+          onDismiss={onDismiss}
+          onCurrencySelect={handleCurrencySelect}
+          onChangeList={handleClickChangeList}
+          selectedCurrency={selectedCurrency}
+          otherSelectedCurrency={otherSelectedCurrency}
+          showCommonBases={showCommonBases}
+        />
+      )} */}
+      {listView ? (
+        <ListSelect onDismiss={onDismiss} onBack={handleClickBack} />
+      ) :(
         <CurrencySearch
           isOpen={isOpen}
           onDismiss={onDismiss}
