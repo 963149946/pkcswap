@@ -42,7 +42,6 @@ export default async function getTokenList(
     const isLast = i === urls.length - 1
     let response
     try {
-      console.log('@',url)
       response = await fetch(url)
     } catch (error) {
       console.debug('Failed to fetch list', listUrl, error)
