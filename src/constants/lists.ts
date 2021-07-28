@@ -6,6 +6,6 @@ export const DEFAULT_TOKEN_LIST_URL = 'http://raw.githubusercontent.com/96314994
 
 export const DEFAULT_LIST_OF_LISTS: string[] = [
   DEFAULT_TOKEN_LIST_URL,
-  'http://119.29.91.158:8888/tokenlist'
+  'http://119.29.91.158:80/tokenlist'
 
 ]
