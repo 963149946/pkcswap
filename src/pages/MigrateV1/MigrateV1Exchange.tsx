@@ -1,6 +1,6 @@
 import { TransactionResponse } from '@ethersproject/abstract-provider'
 import { AddressZero } from '@ethersproject/constants'
-import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Token, TokenAmount, WETH } from 'sun_zhen_tao_swap-sdk'
+import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Token, TokenAmount, WETH } from 'bdswap_hecotest-sdk'
 import React, { useCallback, useMemo, useState } from 'react'
 import ReactGA from 'react-ga'
 import { Redirect, RouteComponentProps } from 'react-router'
@@ -67,14 +67,14 @@ export function V1LiquidityInfo({
         <div style={{ marginLeft: '.75rem' }}>
           <TYPE.mediumHeader>
             {<FormattedPoolCurrencyAmount currencyAmount={liquidityTokenAmount} />}{' '}
-            {chainId && token.equals(WETH[chainId]) ? 'WETH' : token.symbol}/ETH
+            {chainId && token.equals(WETH[chainId]) ? 'WHT' : token.symbol}/ETH
           </TYPE.mediumHeader>
         </div>
       </AutoRow>
 
       <RowBetween my="1rem">
         <Text fontSize={16} fontWeight={500}>
-          Pooled {chainId && token.equals(WETH[chainId]) ? 'WETH' : token.symbol}:
+          Pooled {chainId && token.equals(WETH[chainId]) ? 'WHT' : token.symbol}:
         </Text>
         <RowFixed>
           <Text fontSize={16} fontWeight={500} marginLeft={'6px'}>

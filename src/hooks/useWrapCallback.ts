@@ -1,4 +1,4 @@
-import { Currency, currencyEquals, ETHER, WETH } from 'sun_zhen_tao_swap-sdk'
+import { Currency, currencyEquals, ETHER, WETH } from 'bdswap_hecotest-sdk'
 import { useMemo } from 'react'
 import { tryParseAmount } from '../state/swap/hooks'
 import { useTransactionAdder } from '../state/transactions/hooks'

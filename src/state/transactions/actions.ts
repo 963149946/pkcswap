@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit'
-import { ChainId } from 'sun_zhen_tao_swap-sdk'
+import { ChainId } from 'bdswap_hecotest-sdk'
 
 export interface SerializableTransactionReceipt {
   to: string

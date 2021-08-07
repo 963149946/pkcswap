@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
-import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from 'sun_zhen_tao_swap-sdk'
+import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from 'bdswap_hecotest-sdk'
 import React, { useCallback, useContext, useState } from 'react'
 import { Plus } from 'react-feather'
 import ReactGA from 'react-ga'

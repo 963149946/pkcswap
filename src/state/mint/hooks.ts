@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, ETHER, JSBI, Pair, Percent, Price, TokenAmount } from 'sun_zhen_tao_swap-sdk'
+import { Currency, CurrencyAmount, ETHER, JSBI, Pair, Percent, Price, TokenAmount } from 'bdswap_hecotest-sdk'
 import { useCallback, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { PairState, usePair } from '../../data/Reserves'

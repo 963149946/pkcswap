@@ -1,4 +1,4 @@
-import { JSBI } from 'sun_zhen_tao_swap-sdk'
+import { JSBI } from 'bdswap_hecotest-sdk'
 import { useMemo } from 'react'
 import { NEVER_RELOAD, useSingleCallResult } from '../state/multicall/hooks'
 import { useActiveWeb3React } from './index'

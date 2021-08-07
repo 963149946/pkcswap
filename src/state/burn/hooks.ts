@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI, Pair, Percent, TokenAmount } from 'sun_zhen_tao_swap-sdk'
+import { Currency, CurrencyAmount, JSBI, Pair, Percent, TokenAmount } from 'bdswap_hecotest-sdk'
 import { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { usePair } from '../../data/Reserves'

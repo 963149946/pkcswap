@@ -1,4 +1,4 @@
-import { Percent } from 'sun_zhen_tao_swap-sdk'
+import { Percent } from 'bdswap_hecotest-sdk'
 import React from 'react'
 import { ONE_BIPS } from '../../constants'
 import { warningSeverity } from '../../utils/prices'

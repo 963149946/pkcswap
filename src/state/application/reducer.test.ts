@@ -1,4 +1,4 @@
-import { ChainId } from 'sun_zhen_tao_swap-sdk'
+import { ChainId } from 'bdswap_hecotest-sdk'
 import { createStore, Store } from 'redux'
 import { addPopup, removePopup, toggleSettingsMenu, toggleWalletModal, updateBlockNumber } from './actions'
 import reducer, { ApplicationState } from './reducer'

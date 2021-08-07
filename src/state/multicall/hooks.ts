@@ -93,13 +93,11 @@ function useCallsData(calls: (Call | undefined)[], options?: ListenerOptions): C
     () =>
       calls.map<CallResult>(call => {
         if (!chainId || !call) return INVALID_RESULT
-
         const result = callResults[chainId]?.[toCallKey(call)]
         let data
         if (result?.data && result?.data !== '0x') {
           data = result.data
         }
-
         return { valid: true, data, blockNumber: result?.blockNumber }
       }),
     [callResults, calls, chainId]
@@ -128,6 +126,7 @@ function toCallState(
   latestBlockNumber: number | undefined
 ): CallState {
   if (!callResult) return INVALID_CALL_STATE
+  //console.log('callResult',callResult)
   const { valid, data, blockNumber } = callResult
   if (!valid) return INVALID_CALL_STATE
   if (valid && !blockNumber) return LOADING_CALL_STATE
@@ -137,7 +136,11 @@ function toCallState(
   let result: Result | undefined = undefined
   if (success && data) {
     try {
+      //console.log('data',data,(<string>data).substring(2).length % 2)//string类型
+      //console.log('fragment',fragment)
+      //console.log('fFFf',contractInterface.decodeFunctionResult)
       result = contractInterface.decodeFunctionResult(fragment, data)
+      //console.log('result',result)
     } catch (error) {
       console.debug('Result data parsing failed', fragment, data)
       return {
@@ -235,21 +238,21 @@ export function useSingleCallResult(
   options?: ListenerOptions
 ): CallState {
   const fragment = useMemo(() => contract?.interface?.getFunction(methodName), [contract, methodName])
-
   const calls = useMemo<Call[]>(() => {
     return contract && fragment && isValidMethodArgs(inputs)
       ? [
           {
-            address: contract.address,
+            address: contract.address,//"0x96A02D3290022fbc29665cFF884CE0077f377243"
             callData: contract.interface.encodeFunctionData(fragment, inputs)
           }
         ]
       : []
   }, [contract, fragment, inputs])
-
   const result = useCallsData(calls, options)[0]
   const latestBlockNumber = useBlockNumber()
-
+  //console.log('result',result)
+  //console.log('toCallState',toCallState(result, contract?.interface, fragment, latestBlockNumber)
+  //)
   return useMemo(() => {
     return toCallState(result, contract?.interface, fragment, latestBlockNumber)
   }, [result, contract, fragment, latestBlockNumber])

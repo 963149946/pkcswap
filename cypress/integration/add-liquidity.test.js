@@ -3,12 +3,12 @@ describe('Add Liquidity', function () {
     it('loads the two correct tokens', function () {
         cy.visit('/add/0xF9bA5210F91D0474bd1e1DcDAeC4C58E359AaD85-0xc778417E063141139Fce010982780140Aa0cD5Ab');
         cy.get('#add-liquidity-input-tokena .token-symbol-container').should('contain.text', 'MKR');
-        cy.get('#add-liquidity-input-tokenb .token-symbol-container').should('contain.text', 'ETH');
+        cy.get('#add-liquidity-input-tokenb .token-symbol-container').should('contain.text', 'HT');
     });
     it('does not crash if ETH is duplicated', function () {
         cy.visit('/add/0xc778417E063141139Fce010982780140Aa0cD5Ab-0xc778417E063141139Fce010982780140Aa0cD5Ab');
-        cy.get('#add-liquidity-input-tokena .token-symbol-container').should('contain.text', 'ETH');
-        cy.get('#add-liquidity-input-tokenb .token-symbol-container').should('not.contain.text', 'ETH');
+        cy.get('#add-liquidity-input-tokena .token-symbol-container').should('contain.text', 'HT');
+        cy.get('#add-liquidity-input-tokenb .token-symbol-container').should('not.contain.text', 'HT');
     });
     it('token not in storage is loaded', function () {
         cy.visit('/add/0xb290b2f9f8f108d03ff2af3ac5c8de6de31cdf6d-0xF9bA5210F91D0474bd1e1DcDAeC4C58E359AaD85');

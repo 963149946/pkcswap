@@ -1,4 +1,4 @@
-import { ChainId, Token } from 'sun_zhen_tao_swap-sdk'
+import { ChainId, Token } from 'bdswap_hecotest-sdk'
 import { Tags, TokenInfo, TokenList } from '@uniswap/token-lists'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
@@ -36,6 +36,7 @@ const EMPTY_LIST: TokenAddressMap = {
   [ChainId.ROPSTEN]: {},
   [ChainId.GÖRLI]: {},
   [ChainId.MAINNET]: {},
+  [ChainId.HECO_MAINNET]: {},
   [ChainId.HECO]: {}
 }
 

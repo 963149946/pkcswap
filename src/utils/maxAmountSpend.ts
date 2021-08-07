@@ -1,4 +1,4 @@
-import { CurrencyAmount, ETHER, JSBI } from 'sun_zhen_tao_swap-sdk'
+import { CurrencyAmount, ETHER, JSBI } from 'bdswap_hecotest-sdk'
 import { MIN_ETH } from '../constants'
 
 /**

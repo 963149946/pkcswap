@@ -1,4 +1,4 @@
-import { Currency, ETHER, JSBI, TokenAmount } from 'sun_zhen_tao_swap-sdk'
+import { Currency, ETHER, JSBI, TokenAmount } from 'bdswap_hecotest-sdk'
 import React, { useCallback, useEffect, useState } from 'react'
 import { Plus } from 'react-feather'
 import { Text } from 'rebass'

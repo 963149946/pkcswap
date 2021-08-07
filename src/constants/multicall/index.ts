@@ -1,4 +1,4 @@
-import { ChainId } from 'sun_zhen_tao_swap-sdk'
+import { ChainId } from 'bdswap_hecotest-sdk'
 import MULTICALL_ABI from './abi.json'
 
 const MULTICALL_NETWORKS: { [chainId in ChainId]: string } = {
@@ -7,6 +7,7 @@ const MULTICALL_NETWORKS: { [chainId in ChainId]: string } = {
   [ChainId.KOVAN]: '0x2cc8688C5f75E365aaEEb4ea8D6a480405A48D2A',
   [ChainId.RINKEBY]: '0x42Ad527de7d4e9d9d011aC45B31D8551f8Fe9821',
   [ChainId.GÖRLI]: '0x77dCa2C955b15e9dE4dbBCf1246B4B85b651e50e',
+  [ChainId.HECO_MAINNET]: '0xD4B5f10D61916Bd6E0860144a91Ac658dE8a1437',
   [ChainId.HECO]: '0xe360982b3f6761B35f6Ea119BF6608214Bc082A0'
 }
 

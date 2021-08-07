@@ -1,5 +1,5 @@
 import { parseBytes32String } from '@ethersproject/strings'
-import { Currency, ETHER, Token, currencyEquals } from 'sun_zhen_tao_swap-sdk'
+import { Currency, ETHER, Token, currencyEquals } from 'bdswap_hecotest-sdk'
 import { useMemo } from 'react'
 import { useSelectedTokenList } from '../state/lists/hooks'
 import { NEVER_RELOAD, useSingleCallResult } from '../state/multicall/hooks'
@@ -54,12 +54,17 @@ function parseStringOrBytes32(str: string | undefined, bytes32: string | undefin
 export function useToken(tokenAddress?: string): Token | undefined | null {
   const { chainId } = useActiveWeb3React()
   const tokens = useAllTokens()
+  //console.log('@tokens',tokens)
+  //console.log('@tokenaddress',tokenAddress)//0x96A02D3290022fbc29665cFF884CE0077f377243
 
   const address = isAddress(tokenAddress)
+  //console.log('@address',address)//0x96A02D3290022fbc29665cFF884CE0077f377243
 
   const tokenContract = useTokenContract(address ? address : undefined, false)
   const tokenContractBytes32 = useBytes32TokenContract(address ? address : undefined, false)
   const token: Token | undefined = address ? tokens[address] : undefined
+  //console.log('@token',token)
+  //console.log('@tokenContract',tokenContract)
 
   const tokenName = useSingleCallResult(token ? undefined : tokenContract, 'name', undefined, NEVER_RELOAD)
   const tokenNameBytes32 = useSingleCallResult(
@@ -71,7 +76,9 @@ export function useToken(tokenAddress?: string): Token | undefined | null {
   const symbol = useSingleCallResult(token ? undefined : tokenContract, 'symbol', undefined, NEVER_RELOAD)
   const symbolBytes32 = useSingleCallResult(token ? undefined : tokenContractBytes32, 'symbol', undefined, NEVER_RELOAD)
   const decimals = useSingleCallResult(token ? undefined : tokenContract, 'decimals', undefined, NEVER_RELOAD)
-
+  //console.log('symbol',symbol)
+  //console.log(parseStringOrBytes32(symbol.result?.[0], symbolBytes32.result?.[0], 'UNKNOWN'))
+  //console.log(parseStringOrBytes32(tokenName.result?.[0], tokenNameBytes32.result?.[0], 'Unknown Token'))
   return useMemo(() => {
     if (token) return token
     if (!chainId || !address) return undefined
@@ -104,5 +111,6 @@ export function useToken(tokenAddress?: string): Token | undefined | null {
 export function useCurrency(currencyId: string | undefined): Currency | null | undefined {
   const isETH = currencyId?.toUpperCase() === 'HT'
   const token = useToken(isETH ? undefined : currencyId)
+  //console.log('ttttoken',token)
   return isETH ? ETHER : token
 }

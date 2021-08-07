@@ -1,4 +1,4 @@
-import { Percent } from 'sun_zhen_tao_swap-sdk'
+import { Percent } from 'bdswap_hecotest-sdk'
 import { ALLOWED_PRICE_IMPACT_HIGH, PRICE_IMPACT_WITHOUT_FEE_CONFIRM_MIN } from '../../constants'
 
 /**

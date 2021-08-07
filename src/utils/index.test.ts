@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { AddressZero } from '@ethersproject/constants'
-import { TokenAmount, Token, ChainId, Percent, JSBI } from 'sun_zhen_tao_swap-sdk'
+import { TokenAmount, Token, ChainId, Percent, JSBI } from 'bdswap_hecotest-sdk'
 
 import {
   getEtherscanLink,

@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from 'sun_zhen_tao_swap-sdk'
+import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from 'bdswap_hecotest-sdk'
 import { computeTradePriceBreakdown } from './prices'
 
 describe('prices', () => {

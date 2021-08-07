@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
-import { JSBI, Percent, Router, SwapParameters, Trade, TradeType } from 'sun_zhen_tao_swap-sdk'
+import { JSBI, Percent, Router, SwapParameters, Trade, TradeType } from 'bdswap_hecotest-sdk'
 import { useMemo } from 'react'
 import { BIPS_BASE, DEFAULT_DEADLINE_FROM_NOW, INITIAL_ALLOWED_SLIPPAGE } from '../constants'
 import { getTradeVersion, useV1TradeExchangeAddress } from '../data/V1'

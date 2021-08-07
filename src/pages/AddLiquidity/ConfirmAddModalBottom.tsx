@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from 'sun_zhen_tao_swap-sdk'
+import { Currency, CurrencyAmount, Fraction, Percent } from 'bdswap_hecotest-sdk'
 import React from 'react'
 import { Text } from 'rebass'
 import { ButtonPrimary } from '../../components/Button'

@@ -1,4 +1,4 @@
-import { Trade, TradeType } from 'sun_zhen_tao_swap-sdk'
+import { Trade, TradeType } from 'bdswap_hecotest-sdk'
 import React, { useContext, useMemo } from 'react'
 import { ArrowDown, AlertTriangle } from 'react-feather'
 import { Text } from 'rebass'

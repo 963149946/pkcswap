@@ -1,4 +1,4 @@
-import { Currency } from 'sun_zhen_tao_swap-sdk'
+import { Currency } from 'bdswap_hecotest-sdk'
 import React from 'react'
 import styled from 'styled-components'
 import CurrencyLogo from '../CurrencyLogo'

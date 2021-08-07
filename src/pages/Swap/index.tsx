@@ -1,4 +1,4 @@
-import { CurrencyAmount, JSBI, Token, Trade } from 'sun_zhen_tao_swap-sdk'
+import { CurrencyAmount, JSBI, Token, Trade } from 'bdswap_hecotest-sdk'
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { ArrowDown } from 'react-feather'
 import ReactGA from 'react-ga'

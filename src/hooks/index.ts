@@ -1,5 +1,5 @@
 import { Web3Provider } from '@ethersproject/providers'
-import { ChainId } from 'sun_zhen_tao_swap-sdk'
+import { ChainId } from 'bdswap_hecotest-sdk'
 import { useWeb3React as useWeb3ReactCore } from '@web3-react/core'
 import { Web3ReactContextInterface } from '@web3-react/core/dist/types'
 import { useEffect, useState } from 'react'

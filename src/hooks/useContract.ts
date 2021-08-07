@@ -1,5 +1,5 @@
 import { Contract } from '@ethersproject/contracts'
-import { ChainId, WETH } from 'sun_zhen_tao_swap-sdk'
+import { ChainId, WETH } from 'bdswap_hecotest-sdk'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import { useMemo } from 'react'
 import ENS_ABI from '../constants/abis/ens-registrar.json'

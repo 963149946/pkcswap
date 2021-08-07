@@ -1,10 +1,13 @@
-import { ChainId, JSBI, Percent, Token, WETH } from 'sun_zhen_tao_swap-sdk'
+import { ChainId, JSBI, Percent, Token, WETH } from 'bdswap_hecotest-sdk'
 import { AbstractConnector } from '@web3-react/abstract-connector'
 
 import { fortmatic, injected, portis, walletconnect, walletlink } from '../connectors'
 
 //这里修改为自己的路由合约地址
-export const ROUTER_ADDRESS = '0x1675FAcdFce0FAF5d01a64617EAEd420B2d3DD44'
+//0x1675FAcdFce0FAF5d01a64617EAEd420B2d3DD44 使用自己部署的WETH合约地址作为构造函数参数进行部署的路由合约（代码为uniswap版本）
+export const ROUTER_ADDRESS = '0xF2820e2E205A8a5B309CC0Ead093d3fe6330ddC3' //使用官方版WETH合约地址作为构造函数参数进行部署的路由合约（代码为uniswap版本）
+// export const ROUTER_ADDRESS = '0xA6D7320c0E61E7434FaFB29B1c24068AB8D4269D' //使用官方版WETH合约地址作为构造函数参数进行部署的路由合约（代码为皮皮虾dex版本）
+//export const ROUTER_ADDRESS = '0xde6f9c07F1Caf185c17Aaa2F3241D9b9E1D450e9' //使用官方版WETH合约地址作为构造函数参数进行部署的路由合约（代码为Mdex版本）
 
 // a list of tokens by chain
 type ChainTokenList = {
@@ -24,6 +27,7 @@ const WETH_ONLY: ChainTokenList = {
   [ChainId.RINKEBY]: [WETH[ChainId.RINKEBY]],
   [ChainId.GÖRLI]: [WETH[ChainId.GÖRLI]],
   [ChainId.KOVAN]: [WETH[ChainId.KOVAN]],
+  [ChainId.HECO_MAINNET]: [WETH[ChainId.HECO_MAINNET]],
   [ChainId.HECO]: [WETH[ChainId.HECO]]
 }
 

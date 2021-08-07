@@ -1,4 +1,4 @@
-import { ChainId, Currency, currencyEquals, JSBI, Price, WETH } from 'sun_zhen_tao_swap-sdk'
+import { ChainId, Currency, currencyEquals, JSBI, Price, WETH } from 'bdswap_hecotest-sdk'
 import { useMemo } from 'react'
 import { USDC } from '../constants'
 import { PairState, usePairs } from '../data/Reserves'

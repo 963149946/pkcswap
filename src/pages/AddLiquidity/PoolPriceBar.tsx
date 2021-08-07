@@ -1,4 +1,4 @@
-import { Currency, Percent, Price } from 'sun_zhen_tao_swap-sdk'
+import { Currency, Percent, Price } from 'bdswap_hecotest-sdk'
 import React, { useContext } from 'react'
 import { Text } from 'rebass'
 import { ThemeContext } from 'styled-components'

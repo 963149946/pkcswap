@@ -1,5 +1,5 @@
 import { isAddress } from '../../utils'
-import { Token } from 'sun_zhen_tao_swap-sdk'
+import { Token } from 'bdswap_hecotest-sdk'
 
 export function filterTokens(tokens: Token[], search: string): Token[] {
   if (search.length === 0) return tokens

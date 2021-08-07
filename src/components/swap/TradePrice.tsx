@@ -1,5 +1,5 @@
 import React from 'react'
-import { Price } from 'sun_zhen_tao_swap-sdk'
+import { Price } from 'bdswap_hecotest-sdk'
 import { useContext } from 'react'
 import { Repeat } from 'react-feather'
 import { Text } from 'rebass'

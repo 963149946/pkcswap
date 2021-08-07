@@ -1,4 +1,4 @@
-import { currencyEquals, Trade } from 'sun_zhen_tao_swap-sdk'
+import { currencyEquals, Trade } from 'bdswap_hecotest-sdk'
 import React, { useCallback, useMemo } from 'react'
 import TransactionConfirmationModal, {
   ConfirmationModalContent,

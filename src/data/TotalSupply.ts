@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { Token, TokenAmount } from 'sun_zhen_tao_swap-sdk'
+import { Token, TokenAmount } from 'bdswap_hecotest-sdk'
 import { useTokenContract } from '../hooks/useContract'
 import { useSingleCallResult } from '../state/multicall/hooks'
 

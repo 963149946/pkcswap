@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from 'sun_zhen_tao_swap-sdk'
+import { Currency, ETHER, Token } from 'bdswap_hecotest-sdk'
 
 export function currencyId(currency: Currency): string {
   if (currency === ETHER) return 'HT'

@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from 'react'
 import { ThemeContext } from 'styled-components'
-import { Pair } from 'sun_zhen_tao_swap-sdk'
+import { Pair } from 'bdswap_hecotest-sdk'
 import { Link } from 'react-router-dom'
 import { SwapPoolTabs } from '../../components/NavigationTabs'
 
@@ -63,7 +63,7 @@ export default function Pool() {
       <AppBody>
         <SwapPoolTabs active={'pool'} />
         <AutoColumn gap="lg" justify="center">
-          <ButtonPrimary id="join-pool-button" as={Link} style={{ padding: 16 }} to="/add/ETH">
+          <ButtonPrimary id="join-pool-button" as={Link} style={{ padding: 16 }} to="/add/HT">
             <Text fontWeight={500} fontSize={20}>
               Add Liquidity
             </Text>

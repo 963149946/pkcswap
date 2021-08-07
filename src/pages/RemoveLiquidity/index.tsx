@@ -1,7 +1,7 @@
 import { splitSignature } from '@ethersproject/bytes'
 import { Contract } from '@ethersproject/contracts'
 import { TransactionResponse } from '@ethersproject/providers'
-import { Currency, currencyEquals, ETHER, Percent, WETH } from 'sun_zhen_tao_swap-sdk'
+import { Currency, currencyEquals, ETHER, Percent, WETH } from 'bdswap_hecotest-sdk'
 import React, { useCallback, useContext, useMemo, useState } from 'react'
 import { ArrowDown, Plus } from 'react-feather'
 import ReactGA from 'react-ga'
@@ -48,6 +48,7 @@ export default function RemoveLiquidity({
     params: { currencyIdA, currencyIdB }
   }
 }: RouteComponentProps<{ currencyIdA: string; currencyIdB: string }>) {
+  //console.log('currencyIdA',currencyIdA)//0x96A02D3290022fbc29665cFF884CE0077f377243
   const [currencyA, currencyB] = [useCurrency(currencyIdA) ?? undefined, useCurrency(currencyIdB) ?? undefined]
   const { account, chainId, library } = useActiveWeb3React()
   const [tokenA, tokenB] = useMemo(() => [wrappedCurrency(currencyA, chainId), wrappedCurrency(currencyB, chainId)], [
@@ -374,7 +375,7 @@ export default function RemoveLiquidity({
       <>
         <RowBetween>
           <Text color={theme.text2} fontWeight={500} fontSize={16}>
-            {'UNI ' + currencyA?.symbol + '/' + currencyB?.symbol} Burned
+            {'LP ' + currencyA?.symbol + '/' + currencyB?.symbol} Burned
           </Text>
           <RowFixed>
             <DoubleCurrencyLogo currency0={currencyA} currency1={currencyB} margin={true} />
@@ -561,7 +562,7 @@ export default function RemoveLiquidity({
                               currencyB === ETHER ? WETH[chainId].address : currencyIdB
                             }`}
                           >
-                            Receive WETH
+                            Receive WHT
                           </StyledInternalLink>
                         ) : oneCurrencyIsWETH ? (
                           <StyledInternalLink
@@ -569,7 +570,7 @@ export default function RemoveLiquidity({
                               currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'HT' : currencyIdA
                             }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'HT' : currencyIdB}`}
                           >
-                            Receive ETH
+                            Receive HT
                           </StyledInternalLink>
                         ) : null}
                       </RowBetween>
